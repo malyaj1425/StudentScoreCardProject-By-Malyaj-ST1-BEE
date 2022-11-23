@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SCORES</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      table, th, td {
+        border:1px solid black;
+      }
+      </style>
+</head>
+<body>
+    <h1>SCORE CARD DATA</h1>
+    <div id="myData"></div>
+    
+    <script>
+        fetch('/datafile')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                // div.innerHTML = 'Name: ' + data[i].name + 'Grade: '+ data[i].grade+' Average Marks: '+data[i].average;
+                div.innerHTML="<table style=\"width:100%\" class=\"table table-dark\"><tr><th>NAME</th><th>ID</th><th>TOTAL MARKS</th><th>AVERAGE MARKS</th><th>GRADE</th><th>ADDRESS</th></tr><tr><td>"+data[i].name+"</td><td>"+data[i].id+"</td><td>"+data[i].total+"/500</td><td>"+data[i].average+"</td><td>"+data[i].grade+"</td><td>"+data[i].addr+"</td></tr></table><br>"
+                mainContainer.appendChild(div);
+            }
+        }
+    </script>
+</body>
+</html>
