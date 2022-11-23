@@ -1,6 +1,0 @@
-{"id":668,"name":"john","addr":"Jupiter planet 5 solar system","java":56,"cpp":67,"nalr":78,"fd":89,"bc":89,"total":379,"average":75.8,"grade":"B"}
-
-{"id":128,"name":"Manan","addr":"sec 48 chandigarh","java":85,"cpp":90,"nalr":70,"fd":45,"bc":50,"total":340,"average":68,"grade":"C"}
-
-{"id":545,"name":"Gautam","addr":"sec 71 Mohali","java":78,"cpp":89,"nalr":90,"fd":10,"bc":99,"total":366,"average":73.2,"grade":"B"}
-
